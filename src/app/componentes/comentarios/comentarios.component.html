@@ -1,0 +1,42 @@
+<form [formGroup]="comentario" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label>Nombre </label>
+        <input type="text" formControlName="titulo" readonly="readonly" />
+
+    </div>
+    <br />
+    <div>
+        <label>Usuario </label>
+        <input type="text" formControlName="emisor" />
+        <div *ngIf="submitted && formulario.emisor.errors">
+            <div *ngIf="formulario.emisor.errors.required">El emisor no puede estar vacio</div>
+            <div *ngIf="formulario.emisor.errors.email">El emisor debe ser un email válido</div>
+        </div>
+    </div>
+    <br />
+    <div>
+        <label>Puntuación </label>
+        <input type="number" formControlName="puntuacion" min="1" max="5" class="puntuaciones" />
+        <div *ngIf="submitted && formulario.puntuacion.errors">
+            <div *ngIf="formulario.puntuacion.errors.required">La puntuación no puede estar vacia</div>
+
+        </div>
+    </div>
+    <br />
+    <div>
+        <label>Comentarios </label>
+        <input type="text" formControlName="cuerpo" />
+        <div *ngIf="submitted && formulario.cuerpo.errors">
+            <div *ngIf="formulario.cuerpo.errors.required">No puede estar vacio</div>
+            <div *ngIf="formulario.cuerpo.errors.minlength">Deber contener más de 10 carácteres</div>
+        </div>
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary btn-success">Enviar</button>
+
+        <!-- vinculado al onsubmit directamente al ser el único botón sin función -->
+        <button class="btn btn-danger" type="reset" (click)="onReset()">Cancelar</button>
+    </div>
+</form>

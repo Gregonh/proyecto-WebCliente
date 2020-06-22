@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: darkgray;
+    padding-top:40px;
+}
+
+img{
+    width: 180px;
+    height: 120px;
+}
+
+button {
+
+margin-left :5px 
+}
+
+.container2{
+
+  display: flex; 
+  justify-content:center;
+  align-content:center;
+  background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/1-cute-kawaii-popcorn-pattern-valentina-hramov.jpg");
+}
+
+.item1{
+    width:30%;
+    margin-right:5px;
+}
+
+.ojo{
+    padding-left :5px ;
+}
+
+.puntuaciones{
+    display: flex;
+    align-self: flex-end;
+}
+
+.item2{
+    background-color: whitesmoke;
+    height: 200px;
+}
+
